@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de hora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clock"></i> Calculadora de Hora de regreso al mamboleo</h1>
+            <p class="subtitle">Suma 45 minutos a cualquier hora del día</p>
+        </header>
+        
+        <main>
+            <div class="calculator-card">
+                <div class="input-section">
+                    <label for="time-input">
+                        <i class="fas fa-hourglass-start"></i> Ingresa una hora:
+                    </label>
+                    <div class="input-group">
+                        <input type="time" id="time-input" value="12:00">
+                        <button id="current-time-btn" class="icon-btn" title="Usar hora actual">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div class="button-group">
+                        <button id="calculate-btn" class="btn-primary">
+                            <i class="fas fa-calculator"></i> Calcular Hora + 45 Minutos
+                        </button>
+                        <button id="reset-btn" class="btn-secondary">
+                            <i class="fas fa-redo"></i> Reiniciar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="result-section">
+                    <div class="time-display">
+                        <div class="original-time">
+                            <h3><i class="fas fa-clock"></i> Hora Original</h3>
+                            <p id="original-time-display">--:--</p>
+                        </div>
+                        <div class="plus-sign">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="added-time">
+                            <h3><i class="fas fa-plus"></i> 45 Minutos</h3>
+                            <p>00:45</p>
+                        </div>
+                        <div class="equals-sign">
+                            <i class="fas fa-equals"></i>
+                        </div>
+                        <div class="result-time">
+                            <h3><i class="fas fa-clock"></i> Hora Resultado</h3>
+                            <p id="result-time-display">--:--</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Cómo usar</h3>
+                    <p>1. Lynda ingresa primero una hora en el campo superior (formato 24h)</p>
+                    <p>2. Luego amore Haz clic en "Calcular Hora + 45 Minutos"</p>
+                    <p>3. Ahí te aparecerá el resultado en la sección inferior jeje</p>
+                    <p>También puedes usar el botón <i class="fas fa-sync-alt"></i> para establecer la hora actual</p>
+                    <p>Te amo.</p>
+                </div>
+            </div>
+            
+            <div class="history-section">
+                <h2><i class="fas fa-history"></i> Aquí ta el historial de cálculos mai lof</h2>
+                <div id="history-list">
+                    <!-- Los cálculos anteriores aparecerán aquí -->
+                </div>
+                <button id="clear-history-btn" class="btn-secondary">
+                    <i class="fas fa-trash-alt"></i> Limpiar Historial
+                </button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Calculadora de hora - Del lyndo pa la lynda</p>
+            <p>Esta aplicación suma 45 minutos a cualquier hora ingresada por la bella mujer hermosa de la lynda</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
