@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de hora</title>
+    <title>Calculadora pa la lynda</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
@@ -11,8 +11,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>❤️ Amore, siempre confía en que eres la mejor del mundo mundial❤️ </h1>
-            <p class="subtitle">Te mando millón de abrazos miamore bella</p>
+            <h1><i class="fas fa-clock"></i>❤️ Amore, siempre confía en que eres la mejor del mundo mundial❤️ </h1>
+            <p class="subtitle">Te amo🌼</p>
         </header>
         
         <main>
@@ -27,9 +27,33 @@
                             <i class="fas fa-sync-alt"></i>
                         </button>
                     </div>
+                    
+                    <div class="minute-selector">
+                        <h3><i class="fas fa-plus-circle"></i> Selecciona minutos a sumar:</h3>
+                        <div class="minute-buttons">
+                            <button class="minute-btn active" data-minutes="45">45 minutos</button>
+                            <button class="minute-btn" data-minutes="15">15 minutos</button>
+                            <button class="minute-btn custom-minute-btn" id="custom-minute-btn">
+                                <i class="fas fa-edit"></i> Personalizar
+                            </button>
+                        </div>
+                        <div class="custom-minute-input" id="custom-minute-input">
+                            <label for="custom-minutes">
+                                <i class="fas fa-sliders-h"></i> Ingresa minutos personalizados:
+                            </label>
+                            <div class="custom-input-group">
+                                <input type="number" id="custom-minutes" min="1" max="300" value="30">
+                                <span>minutos</span>
+                            </div>
+                            <button id="use-custom-btn" class="btn-secondary">
+                                <i class="fas fa-check"></i> Usar valor personalizado
+                            </button>
+                        </div>
+                    </div>
+                    
                     <div class="button-group">
                         <button id="calculate-btn" class="btn-primary">
-                            <i class="fas fa-calculator"></i> Calcular Hora + 45 Minutos
+                            <i class="fas fa-calculator"></i> Calcular Hora + <span id="selected-minutes">45</span> Minutos
                         </button>
                         <button id="reset-btn" class="btn-secondary">
                             <i class="fas fa-redo"></i> Reiniciar
@@ -47,8 +71,8 @@
                             <i class="fas fa-plus-circle"></i>
                         </div>
                         <div class="added-time">
-                            <h3><i class="fas fa-plus"></i> 45 Minutos</h3>
-                            <p>00:45</p>
+                            <h3><i class="fas fa-plus"></i> Minutos a sumar</h3>
+                            <p id="minutes-to-add">45 min</p>
                         </div>
                         <div class="equals-sign">
                             <i class="fas fa-equals"></i>
@@ -58,20 +82,38 @@
                             <p id="result-time-display">--:--</p>
                         </div>
                     </div>
+                    
+                    <div class="additional-results">
+                        <div class="additional-result">
+                            <h4><i class="fas fa-clock"></i> También con 15 minutos:</h4>
+                            <p id="result-15-minutes">--:--</p>
+                        </div>
+                        <div class="additional-result">
+                            <h4><i class="fas fa-clock"></i> También con 45 minutos:</h4>
+                            <p id="result-45-minutes">--:--</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="info-section">
                     <h3><i class="fas fa-info-circle"></i> Cómo usar</h3>
-                    <p>1. Lynda ingresa primero una hora en el campo superior (formato 24h)</p>
-                    <p>2. Luego amore Haz clic en "Calcular Hora + 45 Minutos"</p>
-                    <p>3. Ahí te aparecerá el resultado en la sección inferior jeje</p>
-                    <p>También puedes usar el botón <i class="fas fa-sync-alt"></i> para establecer la hora actual</p>
-                    <p>Te amo.</p>
+                    <P>Cambiaron un poquito solamente las cosas amore, pero en principio es lo mismo jeje, se añadió la opción de los 15 minutos e ingresar un valor diferente de 15 o 45</P>
+                    <p>1. Verifica que la hora actual sea la de la casilla en "Ingresa una hora:"</p>
+                    <p>2. Selecciona los minutos que quieres sumar (15, 45 o personalizados)</p>
+                    <p>3. Luego lynda, no olvides dar click en "Calcular Hora + 45 Minutos"</p>
+                    <p>4. fin</p>
+                    <p>Recuerda que con el botón <i class="fas fa-sync-alt"></i> puedes reestablecer a la hora actual</p>
                 </div>
             </div>
             
             <div class="history-section">
-                <h2><i class="fas fa-history"></i> Aquí ta el historial de cálculos mai lof</h2>
+                <h2><i class="fas fa-history"></i> Historial de Cálculos</h2>
+                <div class="history-tabs">
+                    <button class="history-tab active" data-history-type="all">Todos</button>
+                    <button class="history-tab" data-history-type="15">+15 min</button>
+                    <button class="history-tab" data-history-type="45">+45 min</button>
+                    <button class="history-tab" data-history-type="custom">Personalizados</button>
+                </div>
                 <div id="history-list">
                     <!-- Los cálculos anteriores aparecerán aquí -->
                 </div>
@@ -89,6 +131,4 @@
     
     <script src="script.js"></script>
 </body>
-
 </html>
-
